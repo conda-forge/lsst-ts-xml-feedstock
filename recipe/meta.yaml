@@ -1,5 +1,5 @@
 {% set name = "lsst-ts-xml" %}
-{% set version = "20.2.0" %}
+{% set version = "20.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lsst-ts/ts_xml/archive/v{{ version }}.tar.gz
-  sha256: 59779bae0bfac964eacd944cbe90179075dfddcf4d92bb861ddc885e25c567cf
+  sha256: 659dc5ca42bc3317dbddad6a996bd0b673157b22921d942d8f1ec378c7c1ff1f
 
 build:
   noarch: python
