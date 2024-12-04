@@ -1,5 +1,6 @@
 {% set name = "lsst-ts-xml" %}
 {% set version = "22.1.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lsst-ts/ts_xml/archive/v{{ version }}.tar.gz
-  sha256: cf78e02f319d325c55679c2c28e2a6383ab05006beded455a5cbed73fa24e8e9
+  sha256: e54ec2615b50bc7d43ecea5f5aad8aadb3c32b72c633806bfd67f289ab127d65
 
 build:
   noarch: python
@@ -16,11 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
+    - setuptools
     - setuptools_scm
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - astropy-base
     - __unix
 
@@ -30,6 +32,7 @@ test:
   imports:
     - lsst.ts.xml
   requires:
+    - python {{ python_min }}
     - pytest
     - lxml
   commands:
