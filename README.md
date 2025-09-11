@@ -17,7 +17,6 @@ ts-xml is used by ts_sal to generate the commands, events and telemetry
 for various components used by the Vera C. Rubin Observatory for the
 Simonyi Survey Telescope.
 
-
 Current build status
 ====================
 
