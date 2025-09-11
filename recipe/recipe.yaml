@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: lsst-ts-xml
+  version: 23.3.2
+  python_min: 3.11
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/lsst-ts/ts_xml/archive/v${{ version }}.tar.gz
+  sha256: baddbef4149034c7f492918eb8e2257cd7485a68015f93b1504009d87b6d8d6b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python 3.11.*
+    - pip
+    - setuptools
+    - setuptools_scm
+  run:
+    - python >=${{ python_min }}
+    - astropy-base
+    - __unix
+
+tests:
+  - python:
+      imports:
+        - lsst.ts.xml
+      pip_check: false
+      python_version: ${{ python_min }}.*
+  - files:
+      source:
+        - tests
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+        - lxml
+    script:
+      - pytest
+
+about:
+  summary: Contains XML files used to generate SAL data.
+  description: |
+    ts-xml is used by ts_sal to generate the commands, events and telemetry
+    for various components used by the Vera C. Rubin Observatory for the
+    Simonyi Survey Telescope.
+  license: GPL-3.0-only
+  license_file: LICENSE
+  homepage: https://github.com/lsst-ts/ts_xml
+  repository: https://github.com/lsst-ts/ts_xml
+  documentation: https://ts-xml.lsst.io/
+
+extra:
+  recipe-maintainers:
+    - couger01
+    - tribeiro
+    - rbovill
