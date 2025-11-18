@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lsst-ts/ts_xml/archive/v{{ version }}.tar.gz
-  sha256: c7fb87b5ff1c08f27b8f32b2cd5b3a010b0d55963cf8671d428512dc80259014
+  sha256: 16609827376b8dcf46cb5b22f2f188fa9b9178d00c26f710e1384845d8299cc9
 
 build:
   noarch: python
