@@ -1,5 +1,5 @@
 {% set name = "lsst-ts-xml" %}
-{% set version = "27.1.1" %}
+{% set version = "28.0.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lsst-ts/ts_xml/archive/v{{ version }}.tar.gz
-  sha256: f82b2c109e4b29d57cc1e73f80d110b2549422aadd8857ac0640b1b584717126
+  sha256: 50fbee971fc957d7c70de9e2926b341f54a1f822dcf4e017cdf4a83ee11d758c
 
 build:
   noarch: python
