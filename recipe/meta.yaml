@@ -1,5 +1,5 @@
 {% set name = "lsst-ts-xml" %}
-{% set version = "27.1.1" %}
+{% set version = "28.0.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lsst-ts/ts_xml/archive/v{{ version }}.tar.gz
-  sha256: f82b2c109e4b29d57cc1e73f80d110b2549422aadd8857ac0640b1b584717126
+  sha256: b6f00176b70d1e3167767f65286c3604a7e9e9e8a57fe1cd4dc90a1527b4d002
 
 build:
   noarch: python
@@ -24,6 +24,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - astropy-base
+    - fastavro
     - __unix
 
 test:
